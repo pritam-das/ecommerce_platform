@@ -8,7 +8,7 @@ const CollectionPreview = ({title, items, routeName}) => (
         <div className='preview'>
             {
                 items.map(item => (
-                    <CollectionItem key={item.key}
+                    <CollectionItem key={item.id}
                                     item={item}/>
                 ))
             }
