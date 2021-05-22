@@ -12,6 +12,7 @@ import { setCurrentUser } from './redux/user/user.actions';
 
 //TODO:
 // SHOW NOTIFICATION ON SIGN IN SIGN OUT - MATERIAL TOAST
+//PULL SHOP.DATA.JS from firestore
 
 class App extends React.Component {
   componentDidMount(){
