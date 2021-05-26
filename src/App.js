@@ -8,11 +8,15 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
 import { setCurrentUser } from './redux/user/user.actions';
+import { selectCurrentUser } from './redux/user/user.selectors';
 
 //TODO:
 // SHOW NOTIFICATION ON SIGN IN SIGN OUT - MATERIAL TOAST
 //PULL SHOP.DATA.JS from firestore
+//WHEN CART DROPDOWN IS EMPTY IT SHOULD SHOW TEXT THAT ITS EMPTY
 
 class App extends React.Component {
   componentDidMount(){
@@ -53,8 +57,8 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 })
 
 const mapDispatchToProps = dispatch => ({
