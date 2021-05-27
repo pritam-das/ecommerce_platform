@@ -5,6 +5,8 @@ import HomePage from './pages/homepage/homepage.component.jsx';
 import ShopPage from './pages/shop/shop.component'
 import Header from './components/header/header.component'
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component' 
+import CheckoutPage from './pages/checkout/checkout.component';
+
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { connect } from 'react-redux';
@@ -16,7 +18,7 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 //TODO:
 // SHOW NOTIFICATION ON SIGN IN SIGN OUT - MATERIAL TOAST
 //PULL SHOP.DATA.JS from firestore
-//WHEN CART DROPDOWN IS EMPTY IT SHOULD SHOW TEXT THAT ITS EMPTY
+//REPLACE ALL ASSETS
 
 class App extends React.Component {
   componentDidMount(){
@@ -49,6 +51,7 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path ='/' component={ HomePage }/>
+          <Route exact path ='/checkout' component={ CheckoutPage }/>
           <Route path='/shop' component={ShopPage}/>
           <Route exact path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} />
         </Switch>
