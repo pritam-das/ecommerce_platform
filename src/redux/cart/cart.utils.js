@@ -13,3 +13,13 @@ export const addItemToCart = (existingCartItems, cartItemToAdd) => {
 
     return [...existingCartItems, {...cartItemToAdd, quantity: 1}];
 }
+
+export const removeItemFromCart = (existingCartItems, cartItemToRemove) => {
+    const existingCartItem = existingCartItems.find(
+        cartItem => cartItem.id === cartItemToRemove.id
+    )
+
+    if(existingCartItem){
+        return existingCartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
+    }
+}
