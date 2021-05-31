@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'; //PROVIDER is a component that is the parent of all the components in the app
-import store from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store,persistor } from './redux/store';
 
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
       <BrowserRouter>
-        <App />
+        <PersistGate persistor={persistor}>
+          <App />
+        </PersistGate>
       </BrowserRouter>
     </React.StrictMode>
   </Provider>,
