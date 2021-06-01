@@ -19,6 +19,7 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 // SHOW NOTIFICATION ON SIGN IN SIGN OUT - MATERIAL TOAST
 //PULL SHOP.DATA.JS from firestore
 //REPLACE ALL ASSETS
+//SEARCH FEATURE
 
 class App extends React.Component {
   componentDidMount(){
